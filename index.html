@@ -6,7 +6,12 @@
 <meta name="keywords" content="html tutorial template">
 
    <style>
-
+cell {
+  display: inline-block;
+  border: 1px solid black;
+  height: 4px;
+  weight: 4px;
+}
 
    </style>
 </head>
@@ -29,18 +34,49 @@
 -no cells change from one generation to the next
 -the pattern flips back and forth between two or more positions
 </p>
+<div id="container"></div>
   <script>
 
   //code
 
   function makeGrid(width, height) {
-
+    var grid = []
+    for (let x=0; x<width; x++) {
+      let column=new Array(height)
+      column.fill(0)
+      grid.push(column)
+   }
+   //return Array(width).fill(Array(height).fill(0));
+return grid
   }
+function rendderGridToDOM(grid){  //indstead of rid, width/height would work to
+    var container =document.getElementById('container')
+    for(var y=0; y<height; y++) {
+      var row = document.createElement('div')
 
-var grid = makeGrid(10,5)
-  grid[9][4]
 
+      for(var x=0; x<width: x++) {
+        var cell = document.createElement('div')
+        cell.classList.add('cell')
+        row.appendChild(cell)
+      }
+      container.appendChild(row)
+    }
+}
 
+var initialGrid = makeGrid(100,50)
+function initialGrid(grid){
+  var width = grid.lenght
+  var height = grid[0].lenght
+  for(var y=0; y<height; y++) {
+     for(var x=0; x<width; x++) {
+       grid[x][y = Math.random() < 0.33 ? 1: 0
+     }
+  }
+}
+console.log(makeGrid(100,50))
+
+rendderGridToDOM(100,50)
   </script>
 
 Content goes here.
